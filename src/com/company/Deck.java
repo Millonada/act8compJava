@@ -1,9 +1,8 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
-import java.util.Scanner;
+import java.awt.*;
+import java.io.IOException;
+import java.util.*;
 
 public class Deck  {
 
@@ -14,42 +13,45 @@ public class Deck  {
         boolean bandera=false;
         do{
 
+            try {
+                switch (deck.showMenu()) {
+                    case 1:
+                        //se mescla el mazo
+                        deck.mesclar();
+                        deck.numeroCartas();
+                        break;
+                    case 2:
+                        // se muestra la primera carta del mazo
+                        deck.sacarPrimeraCarta();
+                        deck.numeroCartas();
 
-            switch (deck.showMenu()) {
-                case 1:
-                    //se mescla el mazo
-                    deck.mesclar();
-                    deck.numeroCartas();
-                    break;
-                case 2:
-                    // se muestra la primera carta del mazo
-                    deck.sacarPrimeraCarta();
-                    deck.numeroCartas();
+                        break;
+                    case 3:
+                        deck.sacarCartaAzar();
+                        deck.numeroCartas();
+                        break;
+                    case 4:
+                        deck.cincoCartas();
+                        deck.numeroCartas();
+                        break;
 
-                    break;
-                case 3:
-                    deck.sacarCartaAzar();
-                    deck.numeroCartas();
-                    break;
-                case 4:
-                    deck.cincoCartas();
-                    deck.numeroCartas();
-                    break;
-
-                case 5:
-                    System.out.println("Saliendo");
-                    bandera=true;
-                    break;
-                default:
-                    System.out.println("Opcion no definidad");
-                    break;
+                    case 5:
+                        System.out.println("Saliendo");
+                        bandera = true;
+                        break;
+                    default:
+                        System.out.println("Opcion no definidad");
+                        break;
+                }
+            }catch (InputMismatchException e){
+                System.out.println("Por favor solo utiliza numeros.(1-5)");
             }
+
         }while(bandera !=true);
 
 
 
     }
-
     public int showMenu(){
         int opc;
         Scanner leer = new Scanner(System.in);
@@ -62,8 +64,11 @@ public class Deck  {
         System.out.println("--- 4 : Generar mano de 5 cartas");
        // System.out.println("--- 5 : Mostrar todas las cartas ");
         System.out.println("--- 5 : Salir ");
-        opc= leer.nextInt();
-        return opc;
+
+            opc= leer.nextInt();
+            return opc;
+
+
     }
     private ArrayList<Card> cards;
 
