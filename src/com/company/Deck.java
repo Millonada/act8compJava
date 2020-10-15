@@ -9,21 +9,13 @@ public class Deck  {
 
     public static void main(String[] ar){
         Deck deck=new Deck();
-        Scanner leer = new Scanner(System.in);
 
-        int opc;
+
         boolean bandera=false;
         do{
-        System.out.println("-------------Menu de Opciones----------");
-        System.out.println("--- 1 : Shuffle ");
-        System.out.println("--- 2 : Head ");
-        System.out.println("--- 3 : Pick ");
-        System.out.println("--- 4 : Hand");
-        System.out.println("--- 5 : Mostrar todas las cartas ");
-        System.out.println("--- 6 : Salir ");
-        opc= leer.nextInt();
 
-            switch (opc) {
+
+            switch (deck.showMenu()) {
                 case 1:
                     //se mescla el mazo
                     deck.mesclar();
@@ -43,11 +35,8 @@ public class Deck  {
                     deck.cincoCartas();
                     deck.numeroCartas();
                     break;
+
                 case 5:
-                    deck.imprimirMazo();
-                    deck.numeroCartas();
-                    break;
-                case 6:
                     System.out.println("Saliendo");
                     bandera=true;
                     break;
@@ -61,6 +50,21 @@ public class Deck  {
 
     }
 
+    public int showMenu(){
+        int opc;
+        Scanner leer = new Scanner(System.in);
+
+        System.out.println("-------------Bienvenido a Poker!----------");
+        System.out.println("-------------Selecciona una opcion----------");
+        System.out.println("--- 1 : Mezclar el deck ");
+        System.out.println("--- 2 : Sacar una carta ");
+        System.out.println("--- 3 : Carta al azar ");
+        System.out.println("--- 4 : Generar mano de 5 cartas");
+       // System.out.println("--- 5 : Mostrar todas las cartas ");
+        System.out.println("--- 5 : Salir ");
+        opc= leer.nextInt();
+        return opc;
+    }
     private ArrayList<Card> cards;
 
     public Deck() {
@@ -149,7 +153,7 @@ public class Deck  {
     }
     public void sacarPrimeraCarta(){
         System.out.println("-----La primera carta del mazo:");
-        cards.get(1).imprimir();
+        cards.get(0).imprimir();
     }
     public void sacarCartaAzar(){
         Random numeroAzar=new Random();
