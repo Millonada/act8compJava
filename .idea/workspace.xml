@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e88b7a79-0da6-445c-a49f-5f06f40bc41e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/actividad8Java/com/company/Deck.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/actividad8Java/com/company/Deck.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/company/Deck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/company/Deck.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
